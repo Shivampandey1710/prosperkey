@@ -4,7 +4,9 @@ import { PropCard } from "../ui/PropCard";
 import { PROPERTIES } from "../../data/properties";
 import { scrollToId } from "../../utils/scroll";
 
-const FILTERS = ["All", "Under 1.5Cr", "1.5–2Cr", "Above 2Cr"];
+const CITIES = ["All Cities", "Bangalore", "Hyderabad", "Mumbai", "Delhi NCR", "Chennai", "Kolkata", "Pune"];
+const PRICE_FILTERS = ["All Prices", "Under 1.5Cr", "1.5–2.5Cr", "Above 2.5Cr"];
+
 const priceVal = (p) => {
   if (p.price.includes(" L"))
     return parseFloat(p.price.replace("₹", "").replace(" L", "")) / 100;
@@ -12,17 +14,15 @@ const priceVal = (p) => {
 };
 
 export function PropertiesSection() {
-  const [filter, setFilter] = useState("All");
+  const [city, setCity] = useState("All Cities");
+  const [price, setPrice] = useState("All Prices");
   const [expanded, setExpanded] = useState(null);
 
-  const filtered =
-    filter === "All"
-      ? PROPERTIES
-      : filter === "Under 1.5Cr"
-      ? PROPERTIES.filter((p) => priceVal(p) < 1.5)
-      : filter === "1.5–2Cr"
-      ? PROPERTIES.filter((p) => priceVal(p) >= 1.5 && priceVal(p) <= 2)
-      : PROPERTIES.filter((p) => priceVal(p) > 2);
+  let filtered = PROPERTIES;
+  if (city !== "All Cities") filtered = filtered.filter((p) => p.city === city);
+  if (price === "Under 1.5Cr") filtered = filtered.filter((p) => priceVal(p) < 1.5);
+  else if (price === "1.5–2.5Cr") filtered = filtered.filter((p) => priceVal(p) >= 1.5 && priceVal(p) <= 2.5);
+  else if (price === "Above 2.5Cr") filtered = filtered.filter((p) => priceVal(p) > 2.5);
 
   const onEnquire = () => scrollToId("contact");
 
@@ -36,39 +36,60 @@ export function PropertiesSection() {
             <span className="line" />
           </div>
           <h2 className="section-title">
-            Premium Properties in <span className="gold">Bangalore</span>
+            Premium Properties Across <span className="gold">India</span>
           </h2>
           <p className="section-subtitle">
-            Discover handpicked properties from Bangalore's most trusted
-            developers — luxury apartments, premium villas, and investment plots.
+            Discover handpicked properties from India's most trusted
+            developers — luxury apartments, premium villas, and investment-grade homes.
           </p>
           <span className="gold-divider" />
         </FadeIn>
 
-        <FadeIn delay={0.1} className="filter-row">
-          {FILTERS.map((f) => (
-            <button
-              key={f}
-              className={`filter-btn${filter === f ? " active" : ""}`}
-              onClick={() => setFilter(f)}
-            >
-              {f}
-            </button>
-          ))}
+        <FadeIn delay={0.1}>
+          <div className="filter-group">
+            <div className="filter-row">
+              {CITIES.map((c) => (
+                <button
+                  key={c}
+                  className={`filter-btn${city === c ? " active" : ""}`}
+                  onClick={() => setCity(c)}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
+            <div className="filter-row filter-row-secondary">
+              {PRICE_FILTERS.map((f) => (
+                <button
+                  key={f}
+                  className={`filter-btn filter-btn-sm${price === f ? " active" : ""}`}
+                  onClick={() => setPrice(f)}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+          </div>
         </FadeIn>
 
         <div className="prop-grid">
-          {filtered.map((p) => (
-            <PropCard
-              key={p.id}
-              p={p}
-              expanded={expanded === p.id}
-              onToggle={() =>
-                setExpanded(expanded === p.id ? null : p.id)
-              }
-              onEnquire={onEnquire}
-            />
-          ))}
+          {filtered.length > 0 ? (
+            filtered.map((p) => (
+              <PropCard
+                key={p.id}
+                p={p}
+                expanded={expanded === p.id}
+                onToggle={() =>
+                  setExpanded(expanded === p.id ? null : p.id)
+                }
+                onEnquire={onEnquire}
+              />
+            ))
+          ) : (
+            <div className="prop-empty">
+              <p>No properties match your filters. Try adjusting your selection.</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

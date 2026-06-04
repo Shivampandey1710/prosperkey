@@ -55,10 +55,11 @@ export function Hero() {
 
         <div className="hero-stats">
           {[
-            ["500+", "Happy Families"],
-            ["9+", "Premium Projects"],
-            ["₹100Cr+", "Deals Closed"],
-            ["3+", "Years of Trust"],
+            ["1000+", "Happy Families"],
+            ["25+", "Premium Projects"],
+            ["₹500Cr+", "Deals Closed"],
+            ["4+", "Years of Trust"],
+            ["5+", "Cities Served"],
           ].map(([v, l]) => (
             <div key={l} className="hero-stat">
               <div className="hero-stat-value">{v}</div>

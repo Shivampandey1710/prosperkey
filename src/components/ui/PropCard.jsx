@@ -21,8 +21,10 @@ export function PropCard({ p, expanded, onToggle, onEnquire }) {
         <div className="prop-card-tags">
           <span className="tag-gold">{p.tag1}</span>
           <span className="tag-light">{p.tag2}</span>
+          {p.city && <span className="tag-light">{p.city}</span>}
         </div>
         <h3 className="prop-card-name">{p.name}</h3>
+        {p.builder && <p className="prop-card-builder">by {p.builder}</p>}
         <p className="prop-card-loc">📍 {p.loc}</p>
       </div>
       <div className="prop-card-body">
@@ -47,7 +49,7 @@ export function PropCard({ p, expanded, onToggle, onEnquire }) {
             </div>
           </div>
           <button className={expanded ? "btn-explore active" : "btn-explore"}>
-            {expanded ? "CLOSE ▲" : "EXPLORE ▼"}
+            {expanded ? "CLOSE ▲" : "VIEW DETAILS ▼"}
           </button>
         </div>
         {expanded && (
