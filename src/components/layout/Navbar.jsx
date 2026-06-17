@@ -15,11 +15,11 @@ export function Navbar({ activeNav }) {
   return (
     <nav className="navbar">
       <div className="nav-inner">
-        <div className="nav-logo" onClick={() => go("home")}>
-          <img src="/logo.png" alt="ProsperKey Realty" />
-          <div className="nav-logo-text">
-            <div className="nav-logo-name">ProsperKey</div>
-            <div className="nav-logo-sub">Realty Pvt Ltd</div>
+        <div className="nav-brand" onClick={() => go("home")}>
+          <img src="/logo.png" alt="ProsperKey Realty" className="nav-brand-logo" />
+          <div className="nav-brand-text">
+            <div className="nav-brand-name">ProsperKey</div>
+            <div className="nav-brand-sub">REALTY PVT LTD</div>
           </div>
         </div>
         <div className={`nav-links${menuOpen ? " open" : ""}`}>

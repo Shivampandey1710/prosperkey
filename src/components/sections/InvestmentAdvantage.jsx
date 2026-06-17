@@ -1,11 +1,14 @@
 import { FadeIn } from "../ui/FadeIn";
 import { INVESTMENT_ADVANTAGES } from "../../data/properties";
+import { useParallax } from "../../hooks/useParallax";
 
 export function InvestmentAdvantage() {
+  const parallax = useParallax(0.1);
+
   return (
     <section id="invest" className="section section-cream">
       <div className="container">
-        <FadeIn className="section-header">
+        <FadeIn className="section-header" blur direction="up">
           <div className="section-eyebrow">
             <span className="line" />
             <span className="text">Investor Focused</span>
@@ -23,7 +26,7 @@ export function InvestmentAdvantage() {
 
         <div className="invest-grid">
           {INVESTMENT_ADVANTAGES.map((adv, i) => (
-            <FadeIn key={adv.title} delay={i * 0.08}>
+            <FadeIn key={adv.title} delay={i * 0.08} blur direction="up" scale>
               <div className="invest-card">
                 <div className="invest-card-border" />
                 <div className="invest-icon">{adv.icon}</div>

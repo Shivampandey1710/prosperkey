@@ -1,4 +1,5 @@
 import { FadeIn } from "../ui/FadeIn";
+import { useParallax } from "../../hooks/useParallax";
 
 const TEAM = [
   {
@@ -28,10 +29,12 @@ const TEAM = [
 ];
 
 export function LeadershipTeam() {
+  const parallax = useParallax(0.08);
+
   return (
     <section id="leadership" className="section section-cream leadership-section">
       <div className="container">
-        <FadeIn className="section-header">
+        <FadeIn className="section-header" blur direction="up">
           <div className="section-eyebrow">
             <span className="line" />
             <span className="text">Our People</span>
@@ -49,7 +52,7 @@ export function LeadershipTeam() {
 
         <div className="leadership-grid">
           {TEAM.map((member, i) => (
-            <FadeIn key={member.name} delay={i * 0.12}>
+            <FadeIn key={member.name} delay={i * 0.12} blur direction="up" scale>
               <div className="leader-card">
                 <div className="leader-card-glow" />
                 <div className="leader-image-wrap">

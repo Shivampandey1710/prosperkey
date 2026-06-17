@@ -1,5 +1,6 @@
 import { FadeIn } from "../ui/FadeIn";
 import { CORRIDORS } from "../../data/properties";
+import { useParallax } from "../../hooks/useParallax";
 
 function StarRating({ count }) {
   return (
@@ -12,11 +13,13 @@ function StarRating({ count }) {
 }
 
 export function FeaturedCorridors() {
+  const parallax = useParallax(0.12);
+
   return (
     <section id="corridors" className="section section-navy corridor-section">
       <div className="corridor-bg-pattern" />
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
-        <FadeIn className="section-header">
+        <FadeIn className="section-header" blur direction="up">
           <div className="section-eyebrow">
             <span className="line" />
             <span className="text" style={{ color: "var(--gold-light)" }}>Investment Corridors</span>
@@ -34,7 +37,7 @@ export function FeaturedCorridors() {
 
         <div className="corridor-grid">
           {CORRIDORS.map((c, i) => (
-            <FadeIn key={c.name} delay={i * 0.06}>
+            <FadeIn key={c.name} delay={i * 0.06} blur direction="up" scale>
               <div className="corridor-card">
                 <div className="corridor-card-top">
                   <span className="corridor-city-tag">{c.city}</span>

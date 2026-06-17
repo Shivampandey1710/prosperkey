@@ -1,14 +1,17 @@
 import { FadeIn } from "../ui/FadeIn";
 import { LIFESTYLE_AMENITIES } from "../../data/properties";
+import { useParallax } from "../../hooks/useParallax";
 
 export function Lifestyle() {
+  const parallax = useParallax(0.12);
+
   return (
     <section id="lifestyle" className="section lifestyle-section">
       <div className="lifestyle-bg-gradient" />
       <div className="lifestyle-bg-orb lifestyle-orb-1" />
       <div className="lifestyle-bg-orb lifestyle-orb-2" />
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
-        <FadeIn className="section-header">
+        <FadeIn className="section-header" blur direction="up">
           <div className="section-eyebrow">
             <span className="line" />
             <span className="text">Premium Living</span>
@@ -26,7 +29,7 @@ export function Lifestyle() {
 
         <div className="lifestyle-grid">
           {LIFESTYLE_AMENITIES.map((a, i) => (
-            <FadeIn key={a.title} delay={i * 0.08}>
+            <FadeIn key={a.title} delay={i * 0.08} blur direction="up" scale>
               <div className="glass-card">
                 <div className="glass-card-icon">{a.icon}</div>
                 <h3 className="glass-card-title">{a.title}</h3>

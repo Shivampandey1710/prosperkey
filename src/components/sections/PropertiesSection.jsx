@@ -29,7 +29,7 @@ export function PropertiesSection() {
   return (
     <section id="properties" className="section section-cream">
       <div className="container">
-        <FadeIn className="section-header">
+        <FadeIn className="section-header" blur direction="up">
           <div className="section-eyebrow">
             <span className="line" />
             <span className="text">Featured Listings</span>
@@ -45,7 +45,7 @@ export function PropertiesSection() {
           <span className="gold-divider" />
         </FadeIn>
 
-        <FadeIn delay={0.1}>
+        <FadeIn delay={0.1} blur scale>
           <div className="filter-group">
             <div className="filter-row">
               {CITIES.map((c) => (

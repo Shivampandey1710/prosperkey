@@ -1,11 +1,14 @@
 import { FadeIn } from "../ui/FadeIn";
 import { TESTIMONIALS } from "../../data/properties";
+import { useParallax } from "../../hooks/useParallax";
 
 export function Testimonials() {
+  const parallax = useParallax(0.12);
+
   return (
     <section id="testimonials" className="section section-cream">
       <div className="container">
-        <FadeIn className="section-header">
+        <FadeIn className="section-header" blur direction="up">
           <div className="section-eyebrow">
             <span className="line" />
             <span className="text">Client Stories</span>
@@ -22,7 +25,7 @@ export function Testimonials() {
         </FadeIn>
         <div className="testimonials-grid">
           {TESTIMONIALS.map((t, i) => (
-            <FadeIn key={t.name} delay={i * 0.1}>
+            <FadeIn key={t.name} delay={i * 0.1} blur direction="up" scale>
               <div className="testimonial-card">
                 <div className="testimonial-quote-icon">"</div>
                 <div className="testimonial-stars">

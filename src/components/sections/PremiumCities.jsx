@@ -1,4 +1,5 @@
 import { FadeIn } from "../ui/FadeIn";
+import { useParallax } from "../../hooks/useParallax";
 
 const CITIES = [
   {
@@ -41,13 +42,39 @@ const CITIES = [
     growth: "17%",
     image: "/city-pune.png",
   },
+  {
+    name: "Kolkata",
+    tagline: "City of Joy",
+    projects: "14+",
+    potential: "High",
+    growth: "16%",
+    image: "/city-kolkata.png",
+  },
+  {
+    name: "Chennai",
+    tagline: "Detroit of India",
+    projects: "13+",
+    potential: "Very High",
+    growth: "19%",
+    image: "/city-chennai.png",
+  },
+  {
+    name: "Goa",
+    tagline: "India's Beach Paradise",
+    projects: "8+",
+    potential: "Emerging Hotspot",
+    growth: "21%",
+    image: "/city-goa.png",
+  },
 ];
 
 export function PremiumCities() {
+  const parallax = useParallax(0.1);
+
   return (
     <section id="cities" className="section section-white cities-section">
       <div className="container">
-        <FadeIn className="section-header">
+        <FadeIn className="section-header" blur direction="up">
           <div className="section-eyebrow">
             <span className="line" />
             <span className="text">Cities We Serve</span>
@@ -65,7 +92,7 @@ export function PremiumCities() {
 
         <div className="cities-grid cities-grid-5">
           {CITIES.map((city, i) => (
-            <FadeIn key={city.name} delay={i * 0.08}>
+            <FadeIn key={city.name} delay={i * 0.12} blur direction="up" scale>
               <div className="city-card city-card-img">
                 <img
                   src={city.image}

@@ -10,8 +10,9 @@ function AnimatedStat({ icon, value, suffix, label, description }) {
   return (
     <div ref={ref} className="stat-block-v2" style={{
       opacity: visible ? 1 : 0,
-      transform: visible ? "translateY(0)" : "translateY(20px)",
-      transition: "opacity 0.8s ease, transform 0.8s ease",
+      transform: visible ? "translateY(0)" : "translateY(16px)",
+      filter: visible ? "blur(0px)" : "blur(4px)",
+      transition: "opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease",
     }}>
       <div className="stat-icon-v2">{icon}</div>
       <div className="stat-value-v2">

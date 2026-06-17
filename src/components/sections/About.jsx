@@ -8,16 +8,17 @@ export function About() {
     <section id="about" className="section section-white">
       <div className="container">
         <div className="about-grid">
-          <FadeIn>
+          <FadeIn direction="up" blur scale>
             <div className="about-image-wrap">
+
               <div className="about-image-deco" />
               <div className="about-image-accent" />
               <div className="about-image-main">
-                <img src="/logo.png" alt="ProsperKey Realty" style={{ objectFit: "contain", padding: "40px", background: "linear-gradient(145deg, #0c1b33, #1a2d4a)", aspectRatio: "4/5" }} />
+                <img src="/logo.png" alt="ProsperKey Realty" style={{ objectFit: "contain", padding: "40px", background: "linear-gradient(145deg, #111111, #1A1A1A)", aspectRatio: "4/5" }} />
               </div>
             </div>
           </FadeIn>
-          <FadeIn delay={0.2}>
+          <FadeIn delay={0.2} direction="up" blur>
             <div>
               <div className="about-eyebrow">
                 <span className="line" />
