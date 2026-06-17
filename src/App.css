@@ -3654,15 +3654,25 @@ button {
 
 @media (max-width: 900px) {
   .nav-inner {
-    height: 86px;
+    height: 72px;
   }
 
   .nav-brand-logo {
-    height: 76px;
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .nav-brand-name {
+    font-size: 18px;
+  }
+
+  .nav-brand-sub {
+    display: none;
   }
 
   .hero {
-    padding-top: 86px;
+    padding-top: 72px;
   }
 
   .hero-content {
@@ -3677,7 +3687,7 @@ button {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 86px;
+    top: 72px;
     left: 0;
     right: 0;
     background: var(--white);
@@ -3733,11 +3743,30 @@ button {
 
   .hero-stat-glass {
     flex: 0 0 50%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  
+  .hero-stat-glass:nth-child(even) {
     border-right: none;
+  }
+  
+  .hero-stat-glass:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.05);
   }
 
   .search-bar {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .search-input {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 12px;
+  }
+  
+  .search-input:last-child {
+    border-bottom: none;
   }
 
   .corridor-grid {
@@ -3831,7 +3860,7 @@ button {
 
   .hero-stat-glass {
     flex: 1;
-    border-right: none;
+    border-right: none !important;
     border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
@@ -3840,7 +3869,7 @@ button {
   }
 
   .section {
-    padding: 72px 0;
+    padding: 60px 0;
   }
 
   .contact-info-card {
@@ -3911,8 +3940,9 @@ button {
   .welcome-corner-br { bottom: 16px; }
 
   .whatsapp-float {
-    bottom: 16px;
-    right: 16px;
+    bottom: 24px;
+    right: 20px;
+    z-index: 99;
   }
 
   .whatsapp-icon {
