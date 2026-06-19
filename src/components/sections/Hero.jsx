@@ -64,17 +64,7 @@ export function Hero() {
           transform: `translateY(${-contentParallax}px)`,
         }}
       >
-        <div
-          className="hero-badge"
-          style={{
-            opacity: ready ? 1 : 0,
-            transform: ready ? "translateY(0)" : "translateY(20px)",
-            transition: "all 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s",
-          }}
-        >
-          <span className="hero-badge-dot" />
-          <span className="hero-badge-text">Trusted Since 2022 · Bangalore</span>
-        </div>
+
 
         <h1 className="hero-title">
           <div className="hero-line-1">

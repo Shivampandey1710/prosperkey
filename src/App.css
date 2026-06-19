@@ -274,16 +274,14 @@ button {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(250, 248, 243, 0.75);
-  backdrop-filter: blur(24px) saturate(1.2);
-  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  background: #FFFFFF;
   border-bottom: 1px solid rgba(201, 162, 39, 0.08);
   box-shadow: 0 4px 18px rgba(0,0,0,0.05);
-  transition: background 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s cubic-bezier(0.22,1,0.36,1), border-color 0.5s ease;
+  transition: box-shadow 0.5s cubic-bezier(0.22,1,0.36,1), border-color 0.5s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.92);
+  background: #FFFFFF;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06), 0 1px 0 rgba(201, 162, 39, 0.1);
   border-bottom-color: transparent;
 }
@@ -294,19 +292,20 @@ button {
   padding: 0 24px;
   display: flex;
   align-items: center;
-  height: 140px;
+  height: 80px;
+  gap: 0;
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 24px;
   cursor: pointer;
   flex-shrink: 0;
 }
 
 .nav-brand-logo {
-  height: 155px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.06));
@@ -316,44 +315,63 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .nav-brand-name {
   font-family: var(--serif);
-  font-size: 34px;
+  font-size: 27px;
   font-weight: 700;
-  color: var(--navy);
-  line-height: 1;
+  color: #D4AF37;
+  line-height: 1.1;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .nav-brand-sub {
+  font-family: var(--serif);
   font-size: 12px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 700;
-  margin-top: 4px;
+  font-weight: 500;
+  color: #D4AF37;
+  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+  opacity: 0.85;
+}
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  align-items: center;
+  margin: 0;
 }
 
-.nav-links {
-  margin-left: auto;
+.nav-actions {
   display: flex;
-  gap: 2px;
   align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.mobile-only-cta {
+  display: none;
 }
 
 .nav-link {
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   color: #4A4A4A;
   background: none;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 14px;
   border-radius: var(--radius-sm);
   transition: color 0.3s ease, background 0.3s ease;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -388,19 +406,20 @@ button {
 }
 
 .nav-cta {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   border: none;
   background: linear-gradient(135deg, var(--navy) 0%, #1a1a1a 100%);
   color: var(--white);
-  padding: 14px 28px;
+  padding: 12px 22px;
   border-radius: 4px;
   transition: all 0.6s cubic-bezier(0.22,1,0.36,1);
-  margin-left: 8px;
+  margin-left: 0;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .nav-cta::before {
@@ -460,6 +479,8 @@ button {
    ═══════════════════════════════════════════ */
 .hero {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: 100dvh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -605,34 +626,22 @@ button {
   100% { opacity: 1; }
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(201, 162, 39, 0.08);
-  border: 1px solid rgba(201, 162, 39, 0.2);
-  padding: 8px 20px;
-  border-radius: 30px;
-  margin-bottom: 28px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.hero-badge-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--gold-light);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-  box-shadow: 0 0 12px rgba(201, 162, 39, 0.4);
-}
-
-.hero-badge-text {
-  font-size: 11px;
+.hero-company-name {
+  font-family: var(--serif);
+  font-size: clamp(33px, 4.2vw, 50px);
   font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold-light);
+  color: #D4AF37;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 24px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero-company-suffix {
+  font-size: 0.6em;
+  opacity: 0.85;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .hero-title {
@@ -2881,7 +2890,7 @@ button {
     opacity: 1;
   }
   100% {
-    transform: translateY(-110vh) translateX(40px) scale(0.5);
+    transform: translateY(-110dvh) translateX(40px) scale(0.5);
     opacity: 0;
   }
 }
@@ -3671,17 +3680,10 @@ button {
     flex-shrink: 0;
   }
 
-  .nav-brand-name {
-    font-size: 16px;
-    white-space: nowrap;
+  .nav-brand-text {
+    display: none;
   }
 
-  .nav-brand-sub {
-    display: block;
-    font-size: 7px;
-    letter-spacing: 2px;
-    margin-top: 1px;
-  }
 
   .burger {
     display: block;
@@ -3707,6 +3709,16 @@ button {
     border-top: 1px solid var(--border-light);
     box-shadow: var(--shadow-lg);
     z-index: 999;
+  }
+
+  .desktop-only-cta {
+    display: none;
+  }
+
+  .mobile-only-cta {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .nav-links.open .nav-link {
@@ -3735,14 +3747,10 @@ button {
     align-items: flex-start;
   }
 
-  .hero-badge {
+  .hero-company-name {
+    font-size: clamp(25px, 6.5vw, 33px);
     margin-bottom: 20px;
-    padding: 6px 14px;
-  }
-
-  .hero-badge-text {
-    font-size: 9px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   .hero-title {
@@ -4011,7 +4019,7 @@ button {
 
   /* ── LEADERSHIP / TEAM ── */
   .leadership-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 

@@ -18,8 +18,8 @@ export function Navbar({ activeNav }) {
         <div className="nav-brand" onClick={() => go("home")}>
           <img src="/logo.png" alt="ProsperKey Realty" className="nav-brand-logo" />
           <div className="nav-brand-text">
-            <div className="nav-brand-name">ProsperKey</div>
-            <div className="nav-brand-sub">REALTY PVT LTD</div>
+            <div className="nav-brand-name">ProsperKey Realty</div>
+            <div className="nav-brand-sub">Pvt Ltd</div>
           </div>
         </div>
         <div className={`nav-links${menuOpen ? " open" : ""}`}>
@@ -32,15 +32,20 @@ export function Navbar({ activeNav }) {
               {lbl}
             </button>
           ))}
-          <button className="nav-cta" onClick={() => go("contact")}>
+          <button className="nav-cta mobile-only-cta" onClick={() => go("contact")}>
             Enquire Now
           </button>
         </div>
-        <button className="burger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
-          <span className={`burger-line${menuOpen ? " rot1" : ""}`} />
-          <span className={`burger-line${menuOpen ? " hide" : ""}`} />
-          <span className={`burger-line${menuOpen ? " rot2" : ""}`} />
-        </button>
+        <div className="nav-actions">
+          <button className="nav-cta desktop-only-cta" onClick={() => go("contact")}>
+            Enquire Now
+          </button>
+          <button className="burger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+            <span className={`burger-line${menuOpen ? " rot1" : ""}`} />
+            <span className={`burger-line${menuOpen ? " hide" : ""}`} />
+            <span className={`burger-line${menuOpen ? " rot2" : ""}`} />
+          </button>
+        </div>
       </div>
     </nav>
   );
