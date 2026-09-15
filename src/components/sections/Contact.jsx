@@ -67,14 +67,24 @@ export function Contact() {
                     </div>
                   ))}
                 </div>
-                <a
-                  href="https://wa.me/916360556232?text=Hi%20ProsperKey,%20I'm%20interested%20in%20a%20property%20in%20Bangalore."
-                  className="whatsapp-btn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  💬 Chat on WhatsApp
-                </a>
+                <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+                  <a
+                    href="https://share.google/LsltUItpHE6lbK3lf"
+                    className="map-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    🗺️ View on Google Maps
+                  </a>
+                  <a
+                    href="https://wa.me/916360556232?text=Hi%20ProsperKey,%20I'm%20interested%20in%20a%20property%20in%20Bangalore."
+                    className="whatsapp-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    💬 Chat on WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           </FadeIn>

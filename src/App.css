@@ -1854,6 +1854,27 @@ button {
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
 }
 
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+.map-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(220, 185, 126, 0.3);
+}
+
 .contact-form-card {
   background: var(--white);
   border-radius: var(--radius-lg);
