@@ -49,7 +49,7 @@ export function About() {
                   ["🏠", "1000+ Dream Homes Delivered"],
                   ["✅", "100% RERA-Approved Projects"],
                   ["🏦", "End-to-End Home Loan Help"],
-                  ["📍", "HSR Complex, Bengaluru"],
+                  ["📍", "SB Complex, Khata No. 829 219/1, 4th Floor, Begur Hobli, Akshay Nagar Yelenahalli, Akshay Nagar, East, Bommanahalli, Bengaluru, Karnataka 560068"],
                 ].map(([ic, txt]) => (
                   <div key={txt} className="about-feature">
                     <span className="about-feature-icon">{ic}</span>

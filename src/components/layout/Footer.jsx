@@ -67,8 +67,10 @@ export function Footer() {
           <div className="footer-address contact-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             <div>
-              BDA Complex, HSR Layout,<br />
-              Bengaluru – 560102
+              SB Complex, Khata No. 829 219/1, 4th Floor,<br />
+              Begur Hobli, Akshay Nagar Yelenahalli,<br />
+              Akshay Nagar, East, Bommanahalli,<br />
+              Bengaluru, Karnataka 560068
             </div>
           </div>
         </div>

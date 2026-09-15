@@ -52,7 +52,7 @@ export function Contact() {
                     [
                       "📍",
                       "Office Address",
-                      "BDA Complex, HSR Layout, Bengaluru – 560102",
+                      "SB Complex, Khata No. 829 219/1, 4th Floor, Begur Hobli, Akshay Nagar Yelenahalli, Akshay Nagar, East, Bommanahalli, Bengaluru, Karnataka 560068",
                     ],
                     ["📞", "Phone", "+91 6360 556 232"],
                     ["✉️", "Email", "info@prosperkey.in"],
